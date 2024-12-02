@@ -1,7 +1,6 @@
 import pygame
 import random
 
-# Initialize Pygame
 pygame.init()
 
 # Screen dimensions
@@ -182,6 +181,11 @@ while running:
 
     # Control frame rate
     clock.tick(60)
+
+shoot_sound = pygame.mixer.Sound('shoot.wav')  
+hit_sound = pygame.mixer.Sound('hit.wav')      
+victory_sound = pygame.mixer.Sound('victory.wav')  
+
 
 # Quit Pygame
 pygame.quit()
