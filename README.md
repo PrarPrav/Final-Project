@@ -5,7 +5,7 @@ ANGM- Programming for Digital Arts final project
 Demo Video: https://youtu.be/YEZSmyTAPaQ
 
 
-GitHub Repo: https://github.com/PrarPrav/Final-Project.git
+GitHub Repository: https://github.com/PrarPrav/Final-Project.git
 
 
 Celestial Combat is a 2D arcade-style game built using Pygame. In this game, players control a triangular spaceship navigating through space, shooting down descending enemies. The goal is to score 50 points by destroying enemies to win the game. With its vibrant space-themed graphics, smooth animations, and intuitive controls, Celestial Combat offers an engaging and fun gaming experience.
