@@ -7,7 +7,7 @@ pygame.init()
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
 
-# Colors (space-themed)
+# Space- themed colors
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 RED = (255, 0, 0)
@@ -21,7 +21,7 @@ YELLOW = (255, 255, 0)
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Space Shooter")
 
-# Clock for controlling frame rate
+# Frame rate control
 clock = pygame.time.Clock()
 
 # Player settings
@@ -48,9 +48,9 @@ font = pygame.font.Font(None, 36)
 
 # Victory condition
 enemies_defeated = 0
-target_score = 50  # You win when score reaches 50
+target_score = 50  
 
-# Static star field (generated once)
+# Static star field (for background)
 star_field = [(random.randint(0, SCREEN_WIDTH), random.randint(0, SCREEN_HEIGHT),
                random.randint(1, 3)) for _ in range(200)]  # 200 stars
 
@@ -147,7 +147,7 @@ while running:
     # Update enemy positions
     enemies = [(x, y + enemy_speed) for (x, y) in enemies if y + enemy_radius < SCREEN_HEIGHT]
 
-    # Check for collisions
+    # Collision check
     for bullet in bullets[:]:
         for enemy in enemies[:]:
             enemy_x, enemy_y = enemy
@@ -158,18 +158,18 @@ while running:
                 score += 1  # Increment score for hitting an enemy
                 enemies_defeated += 1
 
-    # Draw player (spaceship as triangle)
+    # Spaceship player (triangle)
     draw_player(player_x, player_y)
 
-    # Draw bullets (laser beams)
+    # Bullets (laser beams)
     for bullet in bullets:
         pygame.draw.rect(screen, NEON_BLUE, bullet)
 
-    # Draw enemies (spaceships as glowing circles)
+    # Enemies (glowing circles)
     for enemy in enemies:
         draw_enemy(enemy[0], enemy[1])
 
-    # Draw score
+    # Score board
     draw_text(f"Score: {score}", 36, WHITE, 10, 10)
 
     # Victory condition
@@ -181,10 +181,6 @@ while running:
 
     # Control frame rate
     clock.tick(60)
-
-shoot_sound = pygame.mixer.Sound('shoot.wav')  
-hit_sound = pygame.mixer.Sound('hit.wav')      
-victory_sound = pygame.mixer.Sound('victory.wav')  
 
 
 # Quit Pygame
